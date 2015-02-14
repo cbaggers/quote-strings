@@ -15,7 +15,7 @@ Allows you to use the unquote syntax (from backquote) inside strings
     ;; as are these :)
     > (format nil "somethings: ~{~a~^ ~}" test2)
     "somethings: 1 2 3"
-    > #"something: ,@test2"
+    > #"somethings: ,@test2"
     "somethings: 1 2 3"
 
 Seems handy
