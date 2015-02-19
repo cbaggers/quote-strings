@@ -52,11 +52,12 @@
          (collated (collate-input body))
          (new-string (reconstruct-string collated))
          (vars (remove nil (mapcar #'grab-var-symbs collated))))
-    `(format nil ,new-string ,@vars))
+    `(format nil ,new-string ,@vars)))
 
-  (named-readtables:defreadtable quote-string
-    (:merge :standard)
-    (:dispatch-macro-char #\# #\" #'quote-string-reader)))
+(named-readtables:defreadtable quote-string
+  (:merge :standard)
+  (:dispatch-macro-char #\# #\" #'quote-string-reader))
 
 
 ;;(named-readtables:in-readtable quote-string)
+
